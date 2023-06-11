@@ -1,0 +1,121 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'pfatool'
+version = '0.0.1'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // spring boot
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // markdown renderer
+    implementation 'org.commonmark:commonmark:0.18.2'
+
+    // amazon sdk
+    implementation platform('software.amazon.awssdk:bom:2.17.233')
+    implementation 'software.amazon.awssdk:ec2'
+
+    // apache avro
+    implementation 'org.apache.avro:avro:1.10.2'
+    implementation 'org.apache.avro:avro-compiler:1.10.2'
+
+}
+
+class ExecJavaClass extends JavaExec {
+    @Option(option="class", description="Required: Fully qualified class name")
+    def setFullClassName(String fullClassName) {
+        setMainClass fullClassName
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+    }
+    systemProperty 'junit.jupiter.execution.timeout.test.method.default', '2000 ms'
+}
+
+tasks.register('runClass', ExecJavaClass) {
+    group 'Application'
+    description 'Runs the named class given by the --class argument.'
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+}
+
+tasks.register('runTestClass', ExecJavaClass) {
+    group 'Application'
+    description 'Runs the test class given by the --class argument.'
+    classpath = sourceSets.test.runtimeClasspath
+    standardInput = System.in
+}
+
+tasks.register('generateAvroExample01', JavaExec) {
+    // EXAMPLE01: generate the avro files for this example.
+    group 'Build'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'pfatool.codegen.GenerateJavaCode'
+    args 'src/test/resources/pfa/tmp_generated_01/pfa_example_01.pfa',
+            'src/test/java',
+            'pfatool.tmpgenerated'
+}
+
+tasks.register('generateJavaSample01', JavaExec) {
+    // generate the java code from avro files.
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'pfatool.codegen.GenerateJavaCode'
+    args 'src/test/resources/pfa/sample_01/price_sample_01_y0.pfa',
+            'src/main/java',
+            'pfatool.generated'
+}
+
+tasks.register('generateJavaSample02', JavaExec) {
+    // generate the java code from avro files.
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'pfatool.codegen.GenerateJavaCode'
+    args 'src/test/resources/pfa/sample_01/price_sample_01_y1.pfa',
+            'src/main/java',
+            'pfatool.generated'
+}
+
+tasks.register('generateJavaSamples') {
+    // run the other tasks
+    group 'Build'
+    dependsOn 'generateJavaSample01', 'generateJavaSample02'
+}
+
+tasks.register('generateJavaForecasts01mean', JavaExec) {
+    // generate the java code from avro files.
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'pfatool.codegen.GenerateJavaCode'
+    args 'src/main/resources/pfa/p_01/forecasting_01_y0.pfa',
+            'src/main/java',
+            'pfatool.generated'
+}
+
+tasks.register('generateJavaForecasts01std', JavaExec) {
+    // generate the java code from avro files.
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'pfatool.codegen.GenerateJavaCode'
+    args 'src/main/resources/pfa/p_01/forecasting_01_y1.pfa',
+            'src/main/java',
+            'pfatool.generated'
+}
+
+tasks.register('generateJavaForecasts') {
+    // run the other tasks
+    group 'Code Generation'
+    description 'Run this to generate Java classes for the decision tree in PFA format'
+    dependsOn 'generateJavaForecasts01mean', 'generateJavaForecasts01std'
+}

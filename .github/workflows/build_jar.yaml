@@ -1,0 +1,40 @@
+name: Build Jar File
+
+# manually triggered
+on: workflow_dispatch
+
+jobs:
+  build_jar_file:
+    runs-on: ubuntu-20.04
+
+    permissions:
+      contents: write
+
+    env:
+      JAR_FILEPATH: build/libs/priceapp-0.0.1.jar
+      OUTPUT_FOLDER: built-jars/
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup-java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: create jar file
+        timeout-minutes: 3
+        run: |
+          ./gradlew --rerun-tasks build
+
+      - name: check jar into repo
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          cp "$JAR_FILEPATH" "$OUTPUT_FOLDER"
+          git add "${OUTPUT_FOLDER}*.jar"
+          git commit -m 'github-action built jar file'
+          git push

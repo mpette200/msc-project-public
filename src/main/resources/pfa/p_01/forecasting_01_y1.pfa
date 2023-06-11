@@ -1,0 +1,704 @@
+{"name": "sklearn_DecisionTreeRegressor",
+ "input": 
+  {"type": "record",
+   "name": "SingleRow",
+   "fields": 
+    [{"type": "double", "name": "lag_00"},
+     {"type": "double", "name": "lag_01"},
+     {"type": "double", "name": "lag_02"},
+     {"type": "double", "name": "lag_03"},
+     {"type": "double", "name": "lag_04"},
+     {"type": "double", "name": "lag_05"},
+     {"type": "double", "name": "lag_06"},
+     {"type": "double", "name": "lag_07"},
+     {"type": "double", "name": "lag_08"},
+     {"type": "double", "name": "lag_09"},
+     {"type": "double", "name": "lag_10"},
+     {"type": "double", "name": "lag_11"},
+     {"type": "double", "name": "lag_12"},
+     {"type": "double", "name": "lag_13"},
+     {"type": "double", "name": "lag_14"},
+     {"type": "double", "name": "lag_15"},
+     {"type": "double", "name": "lag_16"},
+     {"type": "double", "name": "lag_17"},
+     {"type": "double", "name": "lag_18"},
+     {"type": "double", "name": "lag_19"},
+     {"type": "double", "name": "lag_20"},
+     {"type": "double", "name": "lag_21"},
+     {"type": "double", "name": "lag_22"},
+     {"type": "double", "name": "lag_23"},
+     {"type": "double", "name": "lag_24"},
+     {"type": "double", "name": "lag_25"},
+     {"type": "double", "name": "lag_26"},
+     {"type": "double", "name": "lag_27"},
+     {"type": "double", "name": "lag_28"},
+     {"type": "double", "name": "lag_29"},
+     {"type": "double", "name": "lag_30"},
+     {"type": "double", "name": "lag_31"},
+     {"type": "double", "name": "lag_32"},
+     {"type": "double", "name": "lag_33"},
+     {"type": "double", "name": "lag_34"},
+     {"type": "double", "name": "lag_35"},
+     {"type": "double", "name": "lag_36"},
+     {"type": "double", "name": "lag_37"},
+     {"type": "double", "name": "lag_38"},
+     {"type": "double", "name": "lag_39"},
+     {"type": "double", "name": "lag_40"},
+     {"type": "double", "name": "lag_41"}]},
+ "output": "double",
+ "cells": 
+  {"tree": 
+    {"type": 
+      {"type": "record",
+       "name": "TreeNode",
+       "fields": 
+        [
+          {"type": 
+            {"type": "enum",
+             "name": "ColumnNames",
+             "symbols": 
+              ["lag_00",
+               "lag_01",
+               "lag_02",
+               "lag_03",
+               "lag_04",
+               "lag_05",
+               "lag_06",
+               "lag_07",
+               "lag_08",
+               "lag_09",
+               "lag_10",
+               "lag_11",
+               "lag_12",
+               "lag_13",
+               "lag_14",
+               "lag_15",
+               "lag_16",
+               "lag_17",
+               "lag_18",
+               "lag_19",
+               "lag_20",
+               "lag_21",
+               "lag_22",
+               "lag_23",
+               "lag_24",
+               "lag_25",
+               "lag_26",
+               "lag_27",
+               "lag_28",
+               "lag_29",
+               "lag_30",
+               "lag_31",
+               "lag_32",
+               "lag_33",
+               "lag_34",
+               "lag_35",
+               "lag_36",
+               "lag_37",
+               "lag_38",
+               "lag_39",
+               "lag_40",
+               "lag_41"]},
+           "name": "field"},
+         {"type": "string", "name": "operator"},
+         {"type": "double", "name": "value"},
+          {"type": ["TreeNode", "double"],
+           "name": "pass"},
+          {"type": ["TreeNode", "double"],
+           "name": "fail"}]},
+     "init": 
+      {"field": "lag_41",
+       "operator": "<=",
+       "value": 1.006291151046753,
+       "pass": 
+        {"TreeNode": 
+          {"field": "lag_41",
+           "operator": "<=",
+           "value": 0.9927462041378021,
+           "pass": 
+            {"TreeNode": 
+              {"field": "lag_41",
+               "operator": "<=",
+               "value": 0.9821203351020813,
+               "pass": 
+                {"TreeNode": 
+                  {"field": "lag_13",
+                   "operator": "<=",
+                   "value": 1.036742925643921,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_12",
+                       "operator": "<=",
+                       "value": 1.0315707921981812,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_15",
+                           "operator": "<=",
+                           "value": 1.0293430089950562,
+                           "pass": {"double": 0.036895885284444804},
+                           "fail": {"double": 0.08203716157276186}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_28",
+                           "operator": "<=",
+                           "value": 1.0052284598350525,
+                           "pass": {"double": 0.07190648453292402},
+                           "fail": {"double": 0.17448313949657687}}}}},
+                   "fail": {"double": 0.1309253230761593}}},
+               "fail": 
+                {"TreeNode": 
+                  {"field": "lag_27",
+                   "operator": "<=",
+                   "value": 1.027089536190033,
+                   "pass": {"double": 0.02584955542236357},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_23",
+                       "operator": "<=",
+                       "value": 1.0256414413452148,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_10",
+                           "operator": "<=",
+                           "value": 1.0263356566429138,
+                           "pass": {"double": 0.04476809224006231},
+                           "fail": {"double": 0.22871615366592168}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_27",
+                           "operator": "<=",
+                           "value": 1.0353742241859436,
+                           "pass": {"double": 0.3850553243553219},
+                           "fail": {"double": 0.01139519258353751}}}}}}}}},
+           "fail": 
+            {"TreeNode": 
+              {"field": "lag_40",
+               "operator": "<=",
+               "value": 1.0046862363815308,
+               "pass": 
+                {"TreeNode": 
+                  {"field": "lag_40",
+                   "operator": "<=",
+                   "value": 0.9950025379657745,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_40",
+                       "operator": "<=",
+                       "value": 0.9849549829959869,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_11",
+                           "operator": "<=",
+                           "value": 1.0313849449157715,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_14",
+                               "operator": "<=",
+                               "value": 1.0293318033218384,
+                               "pass": {"double": 0.033681760144206645},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_25",
+                                   "operator": "<=",
+                                   "value": 1.0084344744682312,
+                                   "pass": {"double": 0.07112714850681953},
+                                   "fail": {"double": 0.16996279710324022}}}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_20",
+                               "operator": "<=",
+                               "value": 1.0072525143623352,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_27",
+                                   "operator": "<=",
+                                   "value": 1.0121999382972717,
+                                   "pass": {"double": 0.05591280299107405},
+                                   "fail": {"double": 0.18572292887086028}}},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_37",
+                                   "operator": "<=",
+                                   "value": 0.9630253612995148,
+                                   "pass": {"double": 0.022242508557097345},
+                                   "fail": {"double": 0.2603472226804571}}}}}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_40",
+                           "operator": "<=",
+                           "value": 0.9927433133125305,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_26",
+                               "operator": "<=",
+                               "value": 1.0292515754699707,
+                               "pass": {"double": 0.024446156641878405},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_39",
+                                   "operator": "<=",
+                                   "value": 1.0248718857765198,
+                                   "pass": {"double": 0.057113181394776384},
+                                   "fail": {"double": 0.4557574249396244}}}}},
+                           "fail": {"double": 0.019310458877569676}}}}},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_26",
+                       "operator": "<=",
+                       "value": 1.0046635866165161,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_12",
+                           "operator": "<=",
+                           "value": 1.0038173198699951,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_27",
+                               "operator": "<=",
+                               "value": 1.0048891305923462,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_27",
+                                   "operator": "<=",
+                                   "value": 0.9962953925132751,
+                                   "pass": 
+                                    {"TreeNode": 
+                                      {"field": "lag_27",
+                                       "operator": "<=",
+                                       "value": 0.9914624691009521,
+                                       "pass": {"double": 0.023129626809957657},
+                                       "fail": {"double": 0.016284939677132397}}},
+                                   "fail": 
+                                    {"TreeNode": 
+                                      {"field": "lag_26",
+                                       "operator": "<=",
+                                       "value": 0.9969843924045563,
+                                       "pass": 
+                                        {"TreeNode": 
+                                          {"field": "lag_26",
+                                           "operator": "<=",
+                                           "value": 0.9930186867713928,
+                                           "pass": {"double": 0.021166391399506903},
+                                           "fail": {"double": 0.014677853720067364}}},
+                                       "fail": 
+                                        {"TreeNode": 
+                                          {"field": "lag_05",
+                                           "operator": "<=",
+                                           "value": 1.0034016370773315,
+                                           "pass": 
+                                            {"TreeNode": 
+                                              {"field": "lag_11",
+                                               "operator": "<=",
+                                               "value": 0.9967399537563324,
+                                               "pass": {"double": 0.015280935455782553},
+                                               "fail": 
+                                                {"TreeNode": 
+                                                  {"field": "lag_19",
+                                                   "operator": "<=",
+                                                   "value": 1.0034016370773315,
+                                                   "pass": 
+                                                    {"TreeNode": 
+                                                      {"field": "lag_33",
+                                                       "operator": "<=",
+                                                       "value": 1.0034127831459045,
+                                                       "pass": 
+                                                        {"TreeNode": 
+                                                          {"field": "lag_37",
+                                                           "operator": "<=",
+                                                           "value": 1.0023236274719238,
+                                                           "pass": 
+                                                            {"TreeNode": 
+                                                              {"field": "lag_33",
+                                                               "operator": "<=",
+                                                               "value": 0.996984452009201,
+                                                               "pass": {"double": 0.013684468387514912},
+                                                               "fail": 
+                                                                {"TreeNode": 
+                                                                  {"field": "lag_18",
+                                                                   "operator": "<=",
+                                                                   "value": 0.9963196814060211,
+                                                                   "pass": {"double": 0.013988134195401342},
+                                                                   "fail": 
+                                                                    {"TreeNode": 
+                                                                      {"field": "lag_20",
+                                                                       "operator": "<=",
+                                                                       "value": 1.002837061882019,
+                                                                       "pass": 
+                                                                        {"TreeNode": 
+                                                                          {"field": "lag_41",
+                                                                           "operator": "<=",
+                                                                           "value": 1.0022806525230408,
+                                                                           "pass": 
+                                                                            {"TreeNode": 
+                                                                              {"field": "lag_37",
+                                                                               "operator": "<=",
+                                                                               "value": 0.9971078634262085,
+                                                                               "pass": {"double": 0.011967367627407372},
+                                                                               "fail": {"double": 0.006946924553828861}}},
+                                                                           "fail": {"double": 0.011136258633410107}}},
+                                                                       "fail": {"double": 0.012213494547990712}}}}}}},
+                                                           "fail": 
+                                                            {"TreeNode": 
+                                                              {"field": "lag_38",
+                                                               "operator": "<=",
+                                                               "value": 1.025858759880066,
+                                                               "pass": {"double": 0.012536527637846202},
+                                                               "fail": {"double": 0.21546104302426092}}}}},
+                                                       "fail": 
+                                                        {"TreeNode": 
+                                                          {"field": "lag_37",
+                                                           "operator": "<=",
+                                                           "value": 1.0286426544189453,
+                                                           "pass": {"double": 0.014409946539845259},
+                                                           "fail": {"double": 0.15960538210727288}}}}},
+                                                   "fail": {"double": 0.014874593523816202}}}}},
+                                           "fail": {"double": 0.015798579500108465}}}}}}},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_27",
+                                   "operator": "<=",
+                                   "value": 1.0119884610176086,
+                                   "pass": {"double": 0.018943435214432248},
+                                   "fail": 
+                                    {"TreeNode": 
+                                      {"field": "lag_14",
+                                       "operator": "<=",
+                                       "value": 1.0352753400802612,
+                                       "pass": {"double": 0.02918231688013851},
+                                       "fail": 
+                                        {"TreeNode": 
+                                          {"field": "lag_41",
+                                           "operator": "<=",
+                                           "value": 0.9982030987739563,
+                                           "pass": {"double": 0.2910094671853219},
+                                           "fail": {"double": 0.07378077464731032}}}}}}}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_12",
+                               "operator": "<=",
+                               "value": 1.0113398432731628,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_06",
+                                   "operator": "<=",
+                                   "value": 1.0090008974075317,
+                                   "pass": 
+                                    {"TreeNode": 
+                                      {"field": "lag_31",
+                                       "operator": "<=",
+                                       "value": 1.040263056755066,
+                                       "pass": {"double": 0.01696651620901627},
+                                       "fail": {"double": 0.25690724987582564}}},
+                                   "fail": {"double": 0.027444706160927892}}},
+                               "fail": {"double": 0.029204724856592427}}}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_26",
+                           "operator": "<=",
+                           "value": 1.0120100378990173,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_30",
+                               "operator": "<=",
+                               "value": 1.004629373550415,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_29",
+                                   "operator": "<=",
+                                   "value": 1.0058589577674866,
+                                   "pass": {"double": 0.017490295353503122},
+                                   "fail": {"double": 0.025554714391515087}}},
+                               "fail": {"double": 0.026466629896723767}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_04",
+                               "operator": "<=",
+                               "value": 1.037152886390686,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_15",
+                                   "operator": "<=",
+                                   "value": 1.0352753400802612,
+                                   "pass": {"double": 0.030348267372578997},
+                                   "fail": 
+                                    {"TreeNode": 
+                                      {"field": "lag_24",
+                                       "operator": "<=",
+                                       "value": 1.0319852232933044,
+                                       "pass": {"double": 0.06397810795008466},
+                                       "fail": {"double": 0.4118107725949495}}}}},
+                               "fail": {"double": 0.17727677010278906}}}}}}}}},
+               "fail": 
+                {"TreeNode": 
+                  {"field": "lag_40",
+                   "operator": "<=",
+                   "value": 1.0245117545127869,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_16",
+                       "operator": "<=",
+                       "value": 1.0262762904167175,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_40",
+                           "operator": "<=",
+                           "value": 1.0120014548301697,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_22",
+                               "operator": "<=",
+                               "value": 1.0279935598373413,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_36",
+                                   "operator": "<=",
+                                   "value": 1.0200209617614746,
+                                   "pass": 
+                                    {"TreeNode": 
+                                      {"field": "lag_25",
+                                       "operator": "<=",
+                                       "value": 1.0095030069351196,
+                                       "pass": {"double": 0.020654372491864605},
+                                       "fail": 
+                                        {"TreeNode": 
+                                          {"field": "lag_08",
+                                           "operator": "<=",
+                                           "value": 1.0319838523864746,
+                                           "pass": {"double": 0.030741466573768247},
+                                           "fail": {"double": 0.1585293972957678}}}}},
+                                   "fail": {"double": 0.05088373121619493}}},
+                               "fail": {"double": 0.07029536556567897}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_26",
+                               "operator": "<=",
+                               "value": 1.0392625331878662,
+                               "pass": {"double": 0.03027503611042646},
+                               "fail": {"double": 0.16712387756851513}}}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_34",
+                           "operator": "<=",
+                           "value": 1.0259278416633606,
+                           "pass": {"double": 0.05846843230750105},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_01",
+                               "operator": "<=",
+                               "value": 1.00180184841156,
+                               "pass": {"double": 0.43669816178769055},
+                               "fail": {"double": 0.02433798750678004}}}}}}},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_36",
+                       "operator": "<=",
+                       "value": 1.03150475025177,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_34",
+                           "operator": "<=",
+                           "value": 1.0328996181488037,
+                           "pass": {"double": 0.049375886462750145},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_12",
+                               "operator": "<=",
+                               "value": 1.0038084387779236,
+                               "pass": {"double": 0.06653956645960582},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_03",
+                                   "operator": "<=",
+                                   "value": 0.9998841285705566,
+                                   "pass": {"double": 0.34298532598683873},
+                                   "fail": 
+                                    {"TreeNode": 
+                                      {"field": "lag_30",
+                                       "operator": "<=",
+                                       "value": 1.0361055135726929,
+                                       "pass": {"double": 0.028190853307825302},
+                                       "fail": {"double": 0.2836470024012368}}}}}}}}},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_32",
+                           "operator": "<=",
+                           "value": 1.0271998643875122,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_00",
+                               "operator": "<=",
+                               "value": 0.9982732236385345,
+                               "pass": 
+                                {"TreeNode": 
+                                  {"field": "lag_06",
+                                   "operator": "<=",
+                                   "value": 1.0014020800590515,
+                                   "pass": {"double": 0.002857565583347333},
+                                   "fail": {"double": 0.44952088565996445}}},
+                               "fail": {"double": 0.06174799849761365}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_11",
+                               "operator": "<=",
+                               "value": 1.0005909204483032,
+                               "pass": {"double": 0.1428014358675184},
+                               "fail": {"double": 0.36619868623205337}}}}}}}}}}}}},
+       "fail": 
+        {"TreeNode": 
+          {"field": "lag_41",
+           "operator": "<=",
+           "value": 1.0234965682029724,
+           "pass": 
+            {"TreeNode": 
+              {"field": "lag_17",
+               "operator": "<=",
+               "value": 1.0258176922798157,
+               "pass": 
+                {"TreeNode": 
+                  {"field": "lag_38",
+                   "operator": "<=",
+                   "value": 1.020006775856018,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_41",
+                       "operator": "<=",
+                       "value": 1.0120014548301697,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_09",
+                           "operator": "<=",
+                           "value": 1.023347795009613,
+                           "pass": 
+                            {"TreeNode": 
+                              {"field": "lag_20",
+                               "operator": "<=",
+                               "value": 0.9770448505878448,
+                               "pass": {"double": 0.06195649391987263},
+                               "fail": {"double": 0.023066028827584056}}},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_31",
+                               "operator": "<=",
+                               "value": 1.0078842639923096,
+                               "pass": {"double": 0.041049574558954804},
+                               "fail": {"double": 0.13131203016295767}}}}},
+                       "fail": {"double": 0.02983188228040097}}},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_27",
+                       "operator": "<=",
+                       "value": 1.0378971695899963,
+                       "pass": {"double": 0.04302172038714011},
+                       "fail": {"double": 0.176590467726197}}}}},
+               "fail": 
+                {"TreeNode": 
+                  {"field": "lag_31",
+                   "operator": "<=",
+                   "value": 1.026936411857605,
+                   "pass": {"double": 0.06156426513118505},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_14",
+                       "operator": "<=",
+                       "value": 1.0183481574058533,
+                       "pass": {"double": 0.4482541375634311},
+                       "fail": {"double": 0.0635661944357672}}}}}}},
+           "fail": 
+            {"TreeNode": 
+              {"field": "lag_37",
+               "operator": "<=",
+               "value": 1.0270297527313232,
+               "pass": 
+                {"TreeNode": 
+                  {"field": "lag_20",
+                   "operator": "<=",
+                   "value": 1.021938443183899,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_35",
+                       "operator": "<=",
+                       "value": 1.032921850681305,
+                       "pass": {"double": 0.04748225739131175},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_13",
+                           "operator": "<=",
+                           "value": 1.0038084387779236,
+                           "pass": {"double": 0.060781770245332094},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_04",
+                               "operator": "<=",
+                               "value": 0.9998841285705566,
+                               "pass": {"double": 0.3020546397631991},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_13",
+                                   "operator": "<=",
+                                   "value": 1.0380530953407288,
+                                   "pass": {"double": 0.04932585619619571},
+                                   "fail": {"double": 0.29437531467749306}}}}}}}}},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_05",
+                       "operator": "<=",
+                       "value": 0.9767609536647797,
+                       "pass": {"double": 0.2529300246076481},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_33",
+                           "operator": "<=",
+                           "value": 0.9752985835075378,
+                           "pass": {"double": 0.18296075874814077},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_40",
+                               "operator": "<=",
+                               "value": 1.0314589738845825,
+                               "pass": {"double": 0.03131894438393167},
+                               "fail": 
+                                {"TreeNode": 
+                                  {"field": "lag_38",
+                                   "operator": "<=",
+                                   "value": 1.0321620106697083,
+                                   "pass": {"double": 0.08942471815619922},
+                                   "fail": {"double": 0.4551183886479356}}}}}}}}}}},
+               "fail": 
+                {"TreeNode": 
+                  {"field": "lag_33",
+                   "operator": "<=",
+                   "value": 1.0271468758583069,
+                   "pass": 
+                    {"TreeNode": 
+                      {"field": "lag_32",
+                       "operator": "<=",
+                       "value": 0.9609386622905731,
+                       "pass": {"double": 0.31669522753407164},
+                       "fail": 
+                        {"TreeNode": 
+                          {"field": "lag_11",
+                           "operator": "<=",
+                           "value": 0.9712407886981964,
+                           "pass": {"double": 0.1670316180360661},
+                           "fail": 
+                            {"TreeNode": 
+                              {"field": "lag_04",
+                               "operator": "<=",
+                               "value": 1.0017645359039307,
+                               "pass": {"double": 0.04049323707750629},
+                               "fail": {"double": 0.11407418770732944}}}}}}},
+                   "fail": 
+                    {"TreeNode": 
+                      {"field": "lag_29",
+                       "operator": "<=",
+                       "value": 1.0271216034889221,
+                       "pass": 
+                        {"TreeNode": 
+                          {"field": "lag_28",
+                           "operator": "<=",
+                           "value": 1.0087847113609314,
+                           "pass": {"double": 0.2659951785397906},
+                           "fail": {"double": 0.06793379191049977}}},
+                       "fail": {"double": 0.3712107711624619}}}}}}}}}}}},
+ "action": 
+  {"model.tree.simpleTree": ["input", {"cell": "tree"}]}}

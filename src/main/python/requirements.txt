@@ -1,0 +1,16 @@
+avro-json-serializer==1.0.4
+avro-python3==1.10.2
+boto3==1.21.13
+matplotlib==3.5.1
+mypy==0.961
+notebook==6.4.8
+numpy==1.21.6
+pandas==1.4.2
+pmdarima==1.8.5
+python-dateutil==2.8.2
+requests==2.28.1
+scikit-learn==1.1.1
+sktime==0.12.0
+statsmodels==0.13.2
+tbats==1.1.0
+titus2==1.2.0

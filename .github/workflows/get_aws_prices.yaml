@@ -1,0 +1,34 @@
+name: Get AWS Spot Prices
+
+# manually triggered
+on:
+  workflow_dispatch:
+    inputs:
+      num_days:
+        description: 'Number of days history to fetch, max=90'
+        type: number
+        required: true
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-20.04
+
+    permissions:
+      contents: write
+
+    env:
+      SCRIPT_PATH: src/main/python/scripts/store_aws_prices.py
+      N_DAYS: ${{ github.event.inputs.num_days }}
+      AWS_ACCESS_KEY_ID: xxxxxxxxxxx
+      AWS_SECRET_ACCESS_KEY: xxxxxxxxxxx
+    
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          pip3 install boto3
+          python3 $SCRIPT_PATH --days $N_DAYS data/latest
+          git add data/latest
+          git commit -m 'github-action fetched AWS data'
+          git push

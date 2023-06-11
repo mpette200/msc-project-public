@@ -1,0 +1,14 @@
+loading: data/latest/eu-west-1_2022-06-07T10_14_24.xz
+using min sample count: 300
+resampling
+making lags: 42
+computing means and standard deviations
+split into training set and test set
+fitting decision tree for means
+decision tree, mean absolute error = 0.03613812203687282
+decision tree, mean absolute percentage error = 0.03563001708347927
+decision tree, mean squared error = 0.003194838129424189
+comparing dummy estimator that is just the mean of inputs
+dummy estimator, mean absolute error = 0.04528890321850815
+dummy estimator, mean absolute percentage error = 0.044438596376056606
+dummy estimator, mean squared error = 0.0048483096158874585

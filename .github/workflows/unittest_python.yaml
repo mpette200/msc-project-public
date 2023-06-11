@@ -1,0 +1,28 @@
+name: Python unit tests
+
+# manually triggered
+on: workflow_dispatch
+
+jobs:
+  run_unit_tests:
+    runs-on: ubuntu-20.04
+    env:
+      REQUIREMENTS_FILE: src/main/python/requirements.txt
+      VERSION_FILE: src/main/python/requirements_python_version.txt
+      TEST_RUNNER: src/test/python/test_runner.py
+    
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version-file: ${{ env.VERSION_FILE }}
+          cache: 'pip'
+      - name: install dependencies
+        run: |
+          pip3 install -r "$REQUIREMENTS_FILE"
+      - name: run unit tests
+        timeout-minutes: 1
+        run: |
+          python3 "./$TEST_RUNNER"

@@ -1,0 +1,1 @@
+{"type":"record","name":"SingleRow","fields":[{"type":"double","name":"x0"},{"type":"double","name":"x1"},{"type":"double","name":"x2"},{"type":"double","name":"x3"}],"namespace":"pfatool.tmpgenerated"}

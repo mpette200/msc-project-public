@@ -1,0 +1,1 @@
+{"field":"x3","operator":"<=","value":4.950000047683716,"pass":{"TreeNode":{"field":"x3","operator":"<=","value":3.3000000715255737,"pass":{"double":8.0},"fail":{"double":7.0}}},"fail":{"double":9.0}}
